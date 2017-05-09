@@ -1,8 +1,10 @@
 # addressbook
 addressbook storage in csv file (comma separated file)
 
+
 #Checkout code:
 git clone https://github.com/echimienti/addressbook.git
+
 
 #For compiling:
 cd addressbook
@@ -18,6 +20,7 @@ sudo make
 sudo cp *.a /usr/lib
 
 make test
+
 
 #Create documentation:
 make doc
