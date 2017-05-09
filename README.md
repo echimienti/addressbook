@@ -2,11 +2,11 @@
 addressbook storage in csv file (comma separated file)
 
 
-#Checkout code:
+# Checkout code:
 git clone https://github.com/echimienti/addressbook.git
 
 
-#For compiling:
+# For compiling:
 cd addressbook
 make
 
@@ -22,5 +22,5 @@ sudo cp *.a /usr/lib
 make test
 
 
-#Create documentation:
+# Create documentation:
 make doc
