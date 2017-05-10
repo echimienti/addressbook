@@ -27,3 +27,7 @@ make test <br />
 
 # Create documentation:
 make doc <br />
+
+
+# Start addressbook program:
+./addressbook_main <br />
