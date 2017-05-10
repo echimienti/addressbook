@@ -9,7 +9,6 @@
  */
 
 #include "addressbook.h"
-#include "common_utils.cpp"
 
 
 /* Function for getting m_address_book vector

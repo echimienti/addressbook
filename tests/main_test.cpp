@@ -9,7 +9,7 @@
 #include <gtest/gtest.h>
 
 #include "../addressbook.cpp"
-#include "../csvfile.cpp"
+#include "../libcsvfile/csvfile.cpp"
 #include "addressbook_test.h"
 #include "csvfile_test.h"
 
