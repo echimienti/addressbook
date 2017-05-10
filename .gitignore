@@ -2,11 +2,14 @@
 .project
 *.o
 addressbook_main
+address.csv
+backup/
 tests/Makefile
 tests/runTests
 tests/CMakeCache.txt
 tests/cmake_install.cmake
 tests/CMakeFiles
 Doxyfile
+Doxyfile.bak
 html/
 latex/
