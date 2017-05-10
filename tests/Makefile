@@ -123,32 +123,32 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
-addressbook_test.o: addressbook_test.cpp.o
+main_test.o: main_test.cpp.o
 
-.PHONY : addressbook_test.o
+.PHONY : main_test.o
 
 # target to build an object file
-addressbook_test.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.o
-.PHONY : addressbook_test.cpp.o
+main_test.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/main_test.cpp.o
+.PHONY : main_test.cpp.o
 
-addressbook_test.i: addressbook_test.cpp.i
+main_test.i: main_test.cpp.i
 
-.PHONY : addressbook_test.i
+.PHONY : main_test.i
 
 # target to preprocess a source file
-addressbook_test.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.i
-.PHONY : addressbook_test.cpp.i
+main_test.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/main_test.cpp.i
+.PHONY : main_test.cpp.i
 
-addressbook_test.s: addressbook_test.cpp.s
+main_test.s: main_test.cpp.s
 
-.PHONY : addressbook_test.s
+.PHONY : main_test.s
 
 # target to generate assembly for a file
-addressbook_test.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.s
-.PHONY : addressbook_test.cpp.s
+main_test.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/main_test.cpp.s
+.PHONY : main_test.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... runTests"
-	@echo "... addressbook_test.o"
-	@echo "... addressbook_test.i"
-	@echo "... addressbook_test.s"
+	@echo "... main_test.o"
+	@echo "... main_test.i"
+	@echo "... main_test.s"
 .PHONY : help
 
 
