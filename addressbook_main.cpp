@@ -24,7 +24,7 @@ int make_choice(char choice) {
     string town;
     string telephone_nr;
     string email_address;
-    CsvFile csv("address.csv");
+    CsvFile<string> csv("address.csv");
     string mode_a = "app";
     string mode_in = "in";
     int row = 1;
@@ -43,7 +43,7 @@ int make_choice(char choice) {
 
     address.add_address(name, street, zip_code, town, telephone_nr, email_address);
 
-    CsvFile csv_a("address.csv", address.get_m_address_book());
+    CsvFile<string> csv_a("address.csv", address.get_m_address_book());
 
     switch (choice) {
         case 'a': {
