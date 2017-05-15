@@ -20,7 +20,7 @@ vector<string> an_entry {"Piet Puk",
 
 vector< vector <string> > an_address { an_entry };
 
-TEST(add_addressTest, add_addressPos) {
+TEST(add_addressStringTest, add_addressPos) {
     Address a(1, 6);
     a.add_address("Piet Puk",
                   "Pukstraat 1",

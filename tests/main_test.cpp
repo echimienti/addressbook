@@ -8,6 +8,8 @@
  */
 #include <gtest/gtest.h>
 
+#include "../addressbook.h"
+#include "../libcsvfile/csvfile.h"
 #include "../addressbook.cpp"
 #include "../libcsvfile/csvfile.cpp"
 #include "addressbook_test.h"
