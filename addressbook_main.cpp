@@ -19,7 +19,7 @@ int make_choice(char choice) {
      * @param: choice: enter a choice
      */
     int row = 1;
-    int col = 6;
+    int col = 58;
     string name;
     string street;
     string zip_code;
