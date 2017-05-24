@@ -13,13 +13,49 @@
 /* Function that runs the main of the program that provides to enter
  * a choice of what you wants to do
  */
+
+int get_nr_of_columns(string filename) {
+    /* Reads in the first line from the csv file and pushes the elements to
+     * a vector. The length of the vector will result in nr of columns
+     *
+     * @param: filename: filename of csv file
+     * @return: int: nr of columns
+     */
+    vector<string> csvColumns;
+    string csvLine;
+    ifstream inf(filename.c_str());
+
+    // If we couldn't open the input file stream for reading
+    if (!inf) {
+        // Print an error and exit
+        cerr << filename << " could not be opened for reading!" << endl;
+        exit(1);
+    }
+
+    // While there's still stuff left to read
+    getline(inf, csvLine, '\n');
+    if (csvLine.size() != 0) {
+        string element;
+        stringstream csvLineStream(csvLine);
+
+        while(std::getline(csvLineStream,element,',')){
+            csvColumns.push_back(element);
+        }
+    }
+
+    inf.close();
+
+    return csvColumns.size();
+}
+
 int make_choice(char choice) {
     /* Enter choice of operation
      *
      * @param: choice: enter a choice
      */
+    string filename = "address.csv";
     int row = 1;
-    int col = 58;
+    int col = get_nr_of_columns(filename);
     string name;
     string street;
     string zip_code;
@@ -43,7 +79,7 @@ int make_choice(char choice) {
 
     address.add_address(name, street, zip_code, town, telephone_nr, email_address);
 
-    CsvFile<string> csv_a("address.csv", address.get_m_address_book(), col);
+    CsvFile<string> csv_a(filename, address.get_m_address_book(), col);
 
     switch (choice) {
         case 'a': {
