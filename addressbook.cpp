@@ -128,7 +128,7 @@ void Address::add_address(vector<string> addressLine) {
      * @param: email_address: address email address
      * @return: void
      */
-    if(m_col == 8){
+    if(m_col == address_end){
         m_address_book.push_back(addressLine);
     }
     else if(m_col == google_end){
