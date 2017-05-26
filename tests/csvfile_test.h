@@ -65,13 +65,13 @@ TEST(csv_write_read_file_stringTest, csv_write_readPos) {
 
     string act_lines = system_cmd_output();
 
-    ASSERT_EQ(csv.get_m_csv_vector().size(), 1) << "Expected 1 row written/read";
-    ASSERT_EQ(act_lines, "1") << "Expected 1 row written/read";
+    ASSERT_EQ(1, csv.get_m_csv_vector().size()) << "Expected 1 row written/read";
+    ASSERT_EQ("1", act_lines) << "Expected 1 row written/read";
 
     CsvFile<string> csv_r("test.csv", 6);
     csv_r.read_file();
 
-    ASSERT_EQ(csv.count_vector_rows(), 1) << "Size of vector should be 1";
+    ASSERT_EQ(1, csv.count_vector_rows()) << "Size of vector should be 1";
 
     clean_test_files();
 }
@@ -79,12 +79,12 @@ TEST(csv_write_read_file_stringTest, csv_write_readPos) {
 TEST(csv_search_file_stringTest, csv_search_Pos) {
     clean_test_files();
 
-    CsvFile<string> csv("test.csv", an_address, 6);
+    CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("in");
-    string expected_found = "Piet Puk";
+    string expected_found = "Puk";
     string search_found = csv.search_entry("Puk");
 
-    ASSERT_EQ(search_found, expected_found) << "Did not find Pietje Puk";
+    ASSERT_EQ(expected_found, search_found) << "Did not find Puk";
 
     clean_test_files();
 }
@@ -92,12 +92,12 @@ TEST(csv_search_file_stringTest, csv_search_Pos) {
 TEST(csv_search_file_stringTest, csv_search_Neg) {
     clean_test_files();
 
-    CsvFile<string> csv("test.csv", an_address, 6);
+    CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("in");
-    string expected_found = "Pietje Puk";
-    string search_found = csv.search_entry("Pietje Puk");
+    string expected_found = "Pietje";
+    string search_found = csv.search_entry("Pietje");
 
-    ASSERT_NE(search_found, expected_found) << "Did not find Pietje Puk";
+    ASSERT_NE(expected_found, search_found) << "Did find Pietje";
 
     clean_test_files();
 }
@@ -115,8 +115,8 @@ TEST(csv_write_read_file_intTest, csv_write_readPos) {
 
     string act_lines = system_cmd_output();
 
-    ASSERT_EQ(csv.get_m_csv_vector().size(), 1) << "Expected 1 row written/read";
-    ASSERT_EQ(act_lines, "1") << "Expected 1 row written/read";
+    ASSERT_EQ(1, csv.get_m_csv_vector().size()) << "Expected 1 row written/read";
+    ASSERT_EQ("1", act_lines) << "Expected 1 row written/read";
 
     CsvFile<int> csv_r("test.csv", 5);
     csv_r.read_file();
@@ -134,7 +134,7 @@ TEST(csv_search_file_intTest, csv_search_Pos) {
     string expected_found = "3";
     string search_found = csv.search_entry("3");
 
-    ASSERT_EQ(search_found, expected_found) << "3";
+    ASSERT_EQ(expected_found, search_found) << "3";
 
     clean_test_files();
 }
@@ -147,7 +147,7 @@ TEST(csv_search_file_intTest, csv_search_Neg) {
     string expected_found = "-1";
     string search_found = csv.search_entry("2");
 
-    ASSERT_NE(search_found, expected_found) << "2";
+    ASSERT_NE(expected_found, search_found) << "2";
 
     clean_test_files();
 }
@@ -158,10 +158,10 @@ TEST(csv_add_second_entry_intTest, csv_search_Pos) {
     a_num_vec.push_back(num_entry2);
 
     CsvFile<int> csv("test.csv", a_num_vec, 5);
-    ASSERT_EQ(csv.count_vector_rows(), 2) << "Size of vector should be 2";
+    ASSERT_EQ(2, csv.count_vector_rows()) << "Size of vector should be 2";
 
     csv.write_file("in");
-    ASSERT_EQ(csv.count_csv_file_lines(), 2) << "Nr of rows in csv file should be 2";
+    ASSERT_EQ(2, csv.count_csv_file_lines()) << "Nr of rows in csv file should be 2";
 
     clean_test_files();
 }
@@ -179,13 +179,13 @@ TEST(csv_write_read_file_doubleTest, csv_write_readPos) {
 
     string act_lines = system_cmd_output();
 
-    ASSERT_EQ(csv.get_m_csv_vector().size(), 1) << "Expected 1 row written/read";
-    ASSERT_EQ(act_lines, "1") << "Expected 1 row written/read";
+    ASSERT_EQ(1, csv.get_m_csv_vector().size()) << "Expected 1 row written/read";
+    ASSERT_EQ("1", act_lines) << "Expected 1 row written/read";
 
     CsvFile<double> csv_r("test.csv", 5);
     csv_r.read_file();
 
-    ASSERT_EQ(csv.count_vector_rows(), 1) << "Size of vector should be 1";
+    ASSERT_EQ(1, csv.count_vector_rows()) << "Size of vector should be 1";
 
     clean_test_files();
 }
@@ -199,7 +199,7 @@ TEST(csv_search_file_doubleTest, csv_search_Pos) {
     string expected_found = "3.99999999999996";
     string search_found = csv.search_entry("3.99999999999996");
 
-    ASSERT_EQ(search_found, expected_found) << "3.99999999999996";
+    ASSERT_EQ(expected_found, search_found) << "3.99999999999996";
 
     clean_test_files();
 }
@@ -212,7 +212,7 @@ TEST(csv_search_file_doubleTest, csv_search_Neg) {
     string expected_found = "2.99999999999997";
     string search_found = csv.search_entry("2.99999999999997");
 
-    ASSERT_NE(search_found, expected_found) << "Should not find 2.99999999999997";
+    ASSERT_NE(expected_found, search_found) << "Should not find 2.99999999999997";
 
     clean_test_files();
 }
