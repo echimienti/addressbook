@@ -16,8 +16,6 @@
 
 using namespace std;
 
-int get_address(char choice);
-
 /*! Address Class: a class provides functionality to add an address and add that
  * to a 2 dimensional vector of vectors.
  * This class has a connection to CsvFile class to store to CSV file.
@@ -38,9 +36,9 @@ public:
     }
 
     //! Function for adding an address to 2 dimensional vector
-    void add_address(string name, string street,
-                string zip_code, string town, string telephone_nr,
-                string email_address);
+    void add_address(vector<string> addressLine);
+
+    void add_header(vector<string> csvHeader);
 
     //! Function for getting m_address_book vector
     vector< vector<string> > get_m_address_book() { return m_address_book; }

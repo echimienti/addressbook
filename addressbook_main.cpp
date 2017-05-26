@@ -10,26 +10,22 @@
 #include "libcsvfile/csvfile.h"
 
 
-/* Function that runs the main of the program that provides to enter
- * a choice of what you wants to do
- */
-
-int get_nr_of_columns(string filename) {
+vector<string> get_csv_header_line(string filename) {
     /* Reads in the first line from the csv file and pushes the elements to
      * a vector. The length of the vector will result in nr of columns
      *
      * @param: filename: filename of csv file
      * @return: int: nr of columns
      */
-    vector<string> csvColumns;
     string csvLine;
     ifstream inf(filename.c_str());
+    vector<string> csvHeaderLine;
 
     // If we couldn't open the input file stream for reading
     if (!inf) {
         // Print an error and exit
-        cerr << filename << " could not be opened for reading!" << endl;
-        exit(1);
+        cerr << filename << " is not present!" << endl;
+        return csvHeaderLine;
     }
 
     // While there's still stuff left to read
@@ -39,45 +35,65 @@ int get_nr_of_columns(string filename) {
         stringstream csvLineStream(csvLine);
 
         while(std::getline(csvLineStream,element,',')){
-            csvColumns.push_back(element);
+            csvHeaderLine.push_back(element);
         }
     }
 
     inf.close();
 
-    return csvColumns.size();
+    return csvHeaderLine;
 }
 
+/* Function that runs the main of the program that provides to enter
+ * a choice of what you wants to do
+ */
 int make_choice(char choice) {
     /* Enter choice of operation
      *
      * @param: choice: enter a choice
      */
     string filename = "address.csv";
+    vector<string> csvHeader = get_csv_header_line(filename);
     int row = 1;
-    int col = get_nr_of_columns(filename);
-    string name;
-    string street;
-    string zip_code;
-    string town;
-    string telephone_nr;
-    string email_address;
+    bool no_csv_header = false;
+
+    if(csvHeader.size() == 0){
+        csvHeader.push_back("First Name");
+        csvHeader.push_back("Last Name");
+        csvHeader.push_back("Street");
+        csvHeader.push_back("Zip Code");
+        csvHeader.push_back("Town");
+        csvHeader.push_back("Telephone number");
+        csvHeader.push_back("Mobile Phone");
+        csvHeader.push_back("Email address");
+
+        no_csv_header = true;
+    }
+
+    int col = csvHeader.size();
     CsvFile<string> csv("address.csv", col);
     string mode_a = "app";
     string mode_in = "in";
-
-    if (choice == 'a') {
-        name = get_input("Enter name: ");
-        street = get_input("Enter street: ");
-        zip_code = get_input("Enter zip_code: ");
-        town = get_input("Enter town: ");
-        telephone_nr = get_input("Enter telephone nr: ");
-        email_address = get_input("Enter email address: ");
-    }
+    vector<string> addressLine;
 
     Address address(row, col);
 
-    address.add_address(name, street, zip_code, town, telephone_nr, email_address);
+    if(no_csv_header){
+        address.add_header(csvHeader);
+    }
+
+    if (choice == 'a') {
+        addressLine.push_back(get_input("Enter first name:"));
+        addressLine.push_back(get_input("Enter last name:"));
+        addressLine.push_back(get_input("Enter street:"));
+        addressLine.push_back(get_input("Enter zip_code:"));
+        addressLine.push_back(get_input("Enter town:"));
+        addressLine.push_back(get_input("Enter telephone nr:"));
+        addressLine.push_back(get_input("Enter mobile phone:"));
+        addressLine.push_back(get_input("Enter email address:"));
+
+        address.add_address(addressLine);
+    }
 
     CsvFile<string> csv_a(filename, address.get_m_address_book(), col);
 
