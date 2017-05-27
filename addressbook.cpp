@@ -11,7 +11,7 @@
 #include "addressbook.h"
 
 
-enum googlecolumns {
+enum googleColumns {
     google_name,
     google_given_ame,
     google_additional_name,
