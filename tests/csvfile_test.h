@@ -75,7 +75,6 @@ TEST(csv_write_read_file_stringTest, csv_write_readPos) {
 
     CsvFile<string> csv("test.csv", an_address, 6);
     csv.write_file("app");
-    vector < vector<string> > csv_vector = csv.get_m_csv_vector();
 
     system("wc -l test.csv|cut -d\" \" -f1 > out.txt"); // execute the linux command
 
@@ -99,8 +98,6 @@ TEST(csv_multipleLine_quotedStringTest, csv_search_Pos) {
 
     CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("in");
-
-    vector < vector<string> > csv_vector = csv.get_m_csv_vector();
 
     system("wc -l test.csv|cut -d\" \" -f1 > out.txt"); // execute the linux command
 
@@ -162,7 +159,6 @@ TEST(csv_write_read_file_intTest, csv_write_readPos) {
 
     CsvFile<int> csv("test.csv", a_num_vec, 5);
     csv.write_file("app");
-    vector < vector<int> > csv_vector = csv.get_m_csv_vector();
 
     system("wc -l test.csv|cut -d\" \" -f1 > out.txt"); // execute the linux command
 
@@ -226,7 +222,6 @@ TEST(csv_write_read_file_doubleTest, csv_write_readPos) {
 
     CsvFile<double> csv("test.csv", a_double_vec, 5);
     csv.write_file("app");
-    vector < vector<double> > csv_vector = csv.get_m_csv_vector();
 
     system("wc -l test.csv|cut -d\" \" -f1 > out.txt"); // execute the linux command
 
