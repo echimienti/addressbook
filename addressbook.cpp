@@ -234,7 +234,14 @@ void Address::add_address(vector<string> addressLine) {
     }
 }
 
+/* Function for adding csv header, naming the csv fields
+ */
 void Address::add_header(vector<string> csvHeader) {
+    /* Adds header to csv file naming the csv fields
+     *
+     * @param: vector<string> csvHeader: name of csv header vector
+     * @return: void
+     */
     for(int i=0;i<m_row;i++) {
         vector<string> addressLine;
         for(int j=0;j<m_col;j++) {
