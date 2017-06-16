@@ -38,6 +38,7 @@ public:
     //! Function for adding an address to 2 dimensional vector
     void add_address(vector<string> addressLine);
 
+    //! Function for adding csv header, naming the csv fields
     void add_header(vector<string> csvHeader);
 
     //! Function for getting m_address_book vector
