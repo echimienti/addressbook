@@ -175,12 +175,7 @@ enum addressColumns {
 void Address::add_address(vector<string> addressLine) {
     /* Adds an address in a row of 2 dimensional array
      *
-     * @param: name: address name
-     * @param: street: address street
-     * @param: zip_code: address zip code
-     * @param: town: address town
-     * @param: telephone_nr: address telephone number
-     * @param: email_address: address email address
+     * @param: vector<string> addressLine: name of address line vector
      * @return: void
      */
     if(m_col == address_end){
