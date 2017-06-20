@@ -207,7 +207,7 @@ void Address::add_address(vector<string> addressLine) {
         vector<string> tempLine;
 
         //first initialize temp vector with empty lines
-        for(int j=outlook_first_name;j<google_end;j++) {
+        for(int j=google_name;j<google_end;j++) {
             tempLine.push_back("");
         }
 
