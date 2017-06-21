@@ -1,3 +1,3 @@
-[submodule "libcsvfile"]
-	path = libcsvfile
+[submodule "libs/csvfile"]
+	path = libs/csvfile
 	url = https://github.com/echimienti/csvfile.git

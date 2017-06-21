@@ -43,7 +43,7 @@ doc:
 	doxygen -g
 	doxygen
 
-addressbook_main: addressbook.o libcsvfile/csvfile.o addressbook_main.o
+addressbook_main: addressbook.o libs/csvfile/csvfile.o addressbook_main.o
 	$(LINK)
 
 -include $(MAKEFILE_DEPEND)
