@@ -16,10 +16,10 @@ vector<int> num_entry2 {6, 7, 8, 9, 10};
 vector< vector <int> > a_num_vec { num_entry1 };
 
 vector<double> double_entry1 {1.99999999999996,
-                           2.99999999999996,
-                           3.99999999999996,
-                           4.99999999999996,
-                           5.99999999999996};
+                              2.99999999999996,
+                              3.99999999999996,
+                              4.99999999999996,
+                              5.99999999999996};
 
 vector< vector <double> > a_double_vec { double_entry1 };
 
@@ -55,40 +55,6 @@ void clean_test_files() {
     if(test_csv_utf8_file_exist == 0) {
         system("rm test.csv.utf8");
     }
-}
-
-void create_utf16_file(){
-    // create an utf-16-le file with one csv entry
-    ofstream outf;
-    outf.open("test.csv", ios::binary);
-    unsigned char byte_order_mark[2];
-    byte_order_mark[0] = 0xFF;
-    byte_order_mark[1] = 0xFE;
-    unsigned char null_byte = 0x00;
-
-    outf << byte_order_mark[0];
-    outf << byte_order_mark[1];
-
-    // write 2 utf16 lines
-    for(int row=0; row<2; row++){
-        for(int e=0; e<8; e++){
-            for(int x=0; x<8; x++){
-                outf << '1';
-                outf << null_byte;
-                if(x == 7 && e != 7){
-                    outf << ",";
-                    outf << null_byte;
-                }
-            }
-        }
-
-        outf << "\r";
-        outf << null_byte;
-        outf << "\n";
-        outf << null_byte;
-    }
-
-    outf.close();
 }
 
 // string tests
@@ -344,7 +310,8 @@ TEST(csv_ConvertUTF16, csv_Pos) {
 
     ASSERT_EQ("UTF-16-LE", bom_type) << "Should have found UTF-16-LE";
 
-    csv.ConvertUTF16();
+    UTF16 utf16("test.csv", "test.csv.utf8");
+    utf16.ConvertUTF16();
 
     ifstream inf2("test.csv");
     getline(inf2, csvLine, '\n');
