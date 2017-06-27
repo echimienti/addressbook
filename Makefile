@@ -19,13 +19,12 @@
 MAKEFILE_DEPEND = .depend
 
 LINK=g++ $^ -o $@
-CFLAGS=-Wall -Wextra -I.
+CFLAGS=-Wall -llibs/csvfile -Wextra -I.
 
 .cpp.o:
 	g++ -std=c++11 $(CFLAGS) -c $< -o $@
 
-TARGETS =
-TARGETS += addressbook_main
+TARGETS = addressbook_main
 
 all:	$(TARGETS)
 
@@ -37,7 +36,7 @@ depend:
 	g++ -MM *.cpp > $(MAKEFILE_DEPEND)
 
 clean:
-	rm -rf *.o $(TARGETS) $(MAKEFILE_DEPEND) html latex
+	rm -rf *.o libs/csvfile/*.o $(TARGETS) $(MAKEFILE_DEPEND) html latex
 
 doc:
 	doxygen -g
