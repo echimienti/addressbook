@@ -80,10 +80,10 @@ TEST(csv_write_read_file_string_test, csv_write_read_pos) {
     clean_test_files();
 }
 
-TEST(csv_multipleLine_quotedStringTest, csv_search_Pos) {
+TEST(csv_element_quotes_with_comma_test, csv_write_read_pos) {
     clean_test_files();
 
-    an_address.push_back(an_entry_var);
+    an_address.push_back(element_with_comma_entry);
 
     CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("in");
@@ -112,7 +112,7 @@ TEST(csv_search_file_stringTest, csv_search_Pos) {
     clean_test_files();
 }
 
-TEST(csv_search_file_stringTest, csv_search_Neg) {
+TEST(csv_search_file_string_test, csv_search_neg) {
     clean_test_files();
 
     CsvFile<string> csv("test.csv", an_address, 8);
@@ -120,15 +120,15 @@ TEST(csv_search_file_stringTest, csv_search_Neg) {
     string expected_found = "Pietje";
     string search_found = csv.search_entry("Pietje");
 
-    ASSERT_NE(expected_found, search_found) << "Did find Pietje";
+    ASSERT_NE(expected_found, search_found) << "Should not find Pietje";
 
     clean_test_files();
 }
 
-TEST(csv_search_file_quotedStringTest, csv_search_Pos) {
+TEST(csv_search_file_element_quotes_with_comma_test, csv_search_Pos) {
     clean_test_files();
 
-    an_address.push_back(an_entry_var);
+    an_address.push_back(element_with_comma_entry);
 
     CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("in");
@@ -172,25 +172,25 @@ TEST(csv_search_file_int_test, csv_search_pos) {
     string expected_found = "3";
     string search_found = csv.search_entry("3");
 
-    ASSERT_EQ(expected_found, search_found) << "3";
+    ASSERT_EQ(expected_found, search_found) << "Did not find 3";
 
     clean_test_files();
 }
 
-TEST(csv_search_file_intTest, csv_search_Neg) {
+TEST(csv_search_file_int_test, csv_search_neg) {
     clean_test_files();
 
     CsvFile<int> csv("test.csv", a_num_vec, 5);
     csv.write_file("in");
     string expected_found = "-1";
-    string search_found = csv.search_entry("2");
+    string search_found = csv.search_entry("-1");
 
-    ASSERT_NE(expected_found, search_found) << "2";
+    ASSERT_NE(expected_found, search_found) << "Should not find -1";
 
     clean_test_files();
 }
 
-TEST(csv_add_second_entry_intTest, csv_search_Pos) {
+TEST(csv_add_second_entry_int_test, csv_search_pos) {
     clean_test_files();
 
     a_num_vec.push_back(num_entry2);
@@ -205,7 +205,7 @@ TEST(csv_add_second_entry_intTest, csv_search_Pos) {
 }
 
 // double tests
-TEST(csv_write_read_file_doubleTest, csv_write_readPos) {
+TEST(csv_write_read_file_double_test, csv_write_read_pos) {
 
     clean_test_files();
 
@@ -227,7 +227,7 @@ TEST(csv_write_read_file_doubleTest, csv_write_readPos) {
     clean_test_files();
 }
 
-TEST(csv_search_file_doubleTest, csv_search_Pos) {
+TEST(csv_search_file_double_test, csv_search_pos) {
     clean_test_files();
 
     CsvFile<double> csv("test.csv", a_double_vec, 5);
@@ -241,7 +241,7 @@ TEST(csv_search_file_doubleTest, csv_search_Pos) {
     clean_test_files();
 }
 
-TEST(csv_search_file_doubleTest, csv_search_Neg) {
+TEST(csv_search_file_double_test, csv_search_neg) {
     clean_test_files();
 
     CsvFile<double> csv("test.csv", a_double_vec, 5);
@@ -254,7 +254,8 @@ TEST(csv_search_file_doubleTest, csv_search_Neg) {
     clean_test_files();
 }
 
-TEST(csv_byteOrderMarkUTF8, csv_bom_Pos) {
+// byte order mark tests
+TEST(csv_byte_order_mark_UTF8, csv_bom_pos) {
     clean_test_files();
 
     string csvLine;
@@ -281,7 +282,7 @@ TEST(csv_byteOrderMarkUTF8, csv_bom_Pos) {
     clean_test_files();
 }
 
-TEST(csv_byteOrderMarkUTF16, csv_bom_Pos) {
+TEST(csv_byte_order_mark_UTF16, csv_bom_pos) {
     clean_test_files();
 
     string csvLine;
@@ -296,7 +297,8 @@ TEST(csv_byteOrderMarkUTF16, csv_bom_Pos) {
     clean_test_files();
 }
 
-TEST(csv_ConvertUTF16ToUTF8, csv_Pos) {
+// convert utf16 test
+TEST(csv_convert_UTF16_to_UTF8, csv_pos) {
     clean_test_files();
 
     string csvLine;
@@ -334,4 +336,3 @@ TEST(csv_ConvertUTF16ToUTF8, csv_Pos) {
 
     clean_test_files();
 }
-
