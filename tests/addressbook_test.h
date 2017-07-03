@@ -20,7 +20,27 @@ vector<string> an_entry {"Piet",
                          "pietje@puk.nl"
 };
 
-vector<string> an_entry_var {"\"Pietje, Pukkie\"",
+vector<string> element_with_comma_entry {"\"Pietje, Pukkie\"",
+                             "Puk",
+                             "Pukstraat 1",
+                             "1111 PP",
+                             "Pukstad",
+                             "011 11111111",
+                             "06123456789",
+                             "piet@puk.nl"
+};
+
+vector<string> single_element_with_quotes_entry {"\"Pietje, Pukkie",
+                             "Puk",
+                             "Pukstraat 1",
+                             "1111 PP",
+                             "Pukstad",
+                             "011 11111111",
+                             "06123456789",
+                             "piet@puk.nl"
+};
+
+vector<string> consequtive_elements_with_quotes_entry {"Pietje\",\"Pukkie",
                              "Puk",
                              "Pukstraat 1",
                              "1111 PP",
