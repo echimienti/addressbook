@@ -58,19 +58,19 @@ void clean_test_files() {
 }
 
 // string tests
-TEST(csv_write_read_file_stringTest, csv_write_readPos) {
+TEST(csv_write_read_file_string_test, csv_write_read_pos) {
 
     clean_test_files();
 
-    CsvFile<string> csv("test.csv", an_address, 6);
+    CsvFile<string> csv("test.csv", an_address, 8);
     csv.write_file("app");
 
     system("wc -l test.csv|cut -d\" \" -f1 > out.txt"); // execute the linux command
 
     string act_lines = system_cmd_output();
 
-    ASSERT_EQ(1, csv.get_m_csv_vector().size()) << "Expected 1 row written/read";
-    ASSERT_EQ("1", act_lines) << "Expected 1 row written/read";
+    ASSERT_EQ(csv.get_m_csv_vector().size(), 1) << "Expected 1 row written/read";
+    ASSERT_EQ(act_lines, "1") << "Expected 1 row written/read";
 
     CsvFile<string> csv_r("test.csv", 6);
     csv_r.read_file();
@@ -153,18 +153,18 @@ TEST(csv_write_read_file_intTest, csv_write_readPos) {
 
     string act_lines = system_cmd_output();
 
-    ASSERT_EQ(1, csv.get_m_csv_vector().size()) << "Expected 1 row written/read";
-    ASSERT_EQ("1", act_lines) << "Expected 1 row written/read";
+    ASSERT_EQ(csv.get_m_csv_vector().size(), 1) << "Expected 1 row written/read";
+    ASSERT_EQ(act_lines, "1") << "Expected 1 row written/read";
 
     CsvFile<int> csv_r("test.csv", 5);
     csv_r.read_file();
 
-    ASSERT_EQ(csv.count_vector_rows(), 1) << "Size of vector should be 1";
+    ASSERT_EQ(1, csv.count_vector_rows()) << "Size of vector should be 1";
 
     clean_test_files();
 }
 
-TEST(csv_search_file_intTest, csv_search_Pos) {
+TEST(csv_search_file_int_test, csv_search_pos) {
     clean_test_files();
 
     CsvFile<int> csv("test.csv", a_num_vec, 5);
