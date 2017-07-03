@@ -212,7 +212,7 @@ TEST(csv_search_two_consequtive_elements_with_quotes_test, csv_search_Pos) {
 }
 
 // integer tests
-TEST(csv_write_read_file_intTest, csv_write_readPos) {
+TEST(csv_write_read_file_int_test, csv_write_read_pos) {
 
     clean_test_files();
 
