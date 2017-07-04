@@ -50,6 +50,16 @@ vector<string> consequtive_elements_with_quotes_entry {"Pietje\",\"Pukkie",
                              "piet@puk.nl"
 };
 
+vector<string> last_element_with_quotes_entry {"Pietje",
+                             "Puk",
+                             "Pukstraat 1",
+                             "1111 PP",
+                             "Pukstad",
+                             "011 11111111",
+                             "06123456789",
+                             "\"piet@puk.nl"
+};
+
 vector< vector <string> > an_address { an_entry };
 
 TEST(add_addressStringTest, add_addressPos) {
