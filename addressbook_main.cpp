@@ -125,14 +125,18 @@ int make_choice(char choice) {
         }
         case 'm': {
             csv.read_file();
-            csv.delete_modify("modify", "address(es)");
-            csv.write_file(mode_in);
+            int result = csv.delete_modify("modify", "address(es)");
+            if(result == 0){
+                csv.write_file(mode_in);
+            }
             break;
         }
         case 'd': {
             csv.read_file();
-            csv.delete_modify("delete", "address(es)");
-            csv.write_file(mode_in);
+            int result = csv.delete_modify("delete", "address(es)");
+            if(result == 0){
+                csv.write_file(mode_in);
+            }
             break;
         }
         case 'b': {
@@ -144,7 +148,6 @@ int make_choice(char choice) {
             break;
         }
     }
-
     return 0;
 }
 
