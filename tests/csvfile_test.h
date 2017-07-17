@@ -251,11 +251,25 @@ TEST(csv_modify_test_modify, csv_modify_pos) {
     clean_test_files();
 
     CsvFile<string> csv("test.csv", an_address, 8);
+
+    // Do you want to modify addresses: y
+    // Line number to modify\nEnter -1 to step through them all: 1
+    // Do you want to modify line: 1?\n Confirm modify y/n or q to quit: y
+    // Do you want to modify this string?\n Confirm y/n or quit: q: y
+    // Enter new string? Pieter
+    // Do you want to modify this string? n
+    // Do you want to modify this string? q
     vector<string> input {"y","1","y","y","Pieter","n","q"};
     bool isTest = true;
 
     int result = csv.delete_modify("modify", "addresses", isTest, input);
     ASSERT_EQ(0, result) << "Failed to modify";
+
+    csv.write_file("in");
+    string expected_found = "Pieter";
+    string search_found = csv.search_entry("Pieter");
+
+    ASSERT_EQ(expected_found, search_found) << "Should have found Pieter";
 
     clean_test_files();
 }
@@ -264,6 +278,8 @@ TEST(csv_modify_test_confirm_main_no, csv_modify_pos) {
     clean_test_files();
 
     CsvFile<string> csv("test.csv", an_address, 8);
+
+    // Do you want to modify addresses: n
     vector<string> input {"n"};
     bool isTest = true;
 
@@ -277,6 +293,10 @@ TEST(csv_modify_test_confirm_modify_no, csv_modify_pos) {
     clean_test_files();
 
     CsvFile<string> csv("test.csv", an_address, 8);
+
+    // Do you want to modify addresses: y
+    // Line number to modify\nEnter -1 to step through them all: 1
+    // Do you want to modify line: 1?\n Confirm modify y/n or q to quit: n
     vector<string> input {"y","1","n"};
     bool isTest = true;
 
@@ -287,10 +307,35 @@ TEST(csv_modify_test_confirm_modify_no, csv_modify_pos) {
     clean_test_files();
 }
 
+TEST(csv_modify_test_confirm_update_quit, csv_modify_pos) {
+    clean_test_files();
+
+    CsvFile<string> csv("test.csv", an_address, 8);
+
+    // Do you want to modify addresses: y
+    // Line number to modify\nEnter -1 to step through them all: 1
+    // Do you want to modify line: 1?\n Confirm modify y/n or q to quit: y
+    // Do you want to modify this string?\n Confirm y/n or quit: q: q
+    vector<string> input {"y","1","y", "q"};
+    bool isTest = true;
+
+    int result = csv.delete_modify("modify", "addresses", isTest, input);
+    cout << endl;
+    ASSERT_EQ(0, result) << "Failed to enter no in update confirm";
+
+    clean_test_files();
+}
+
 TEST(csv_modify_test_confirm_update_no, csv_modify_pos) {
     clean_test_files();
 
     CsvFile<string> csv("test.csv", an_address, 8);
+
+    // Do you want to modify addresses: y
+    // Line number to modify\nEnter -1 to step through them all: 1
+    // Do you want to modify line: 1?\n Confirm modify y/n or q to quit: y
+    // Do you want to modify this string?\n Confirm y/n or quit: q: n
+    // Do you want to modify this string?\n Confirm y/n or quit: q: q
     vector<string> input {"y","1","y", "n", "q"};
     bool isTest = true;
 
