@@ -170,6 +170,13 @@ enum addressColumns {
     address_end
 };
 
+//! constructor
+Address::Address(int row, int col)
+    : m_row(row), m_col(col)
+{
+   vector< vector<string> > m_address_book(m_row, vector<string>(m_col));
+}
+
 /* Function for getting m_address_book vector
  */
 void Address::add_address(vector<string> addressLine) {

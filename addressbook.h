@@ -29,11 +29,7 @@ private:
 
 public:
     //! constructor
-    Address(int row, int col)
-        : m_row(row), m_col(col)
-    {
-       vector< vector<string> > m_address_book(m_row, vector<string>(m_col));
-    }
+    Address(int, int);
 
     //! Function for adding an address to 2 dimensional vector
     void add_address(vector<string> addressLine);
