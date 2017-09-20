@@ -6,8 +6,7 @@
  @version 0.1 28/03/17
  */
 
-#ifndef ADDRESSBOOK_H
-#define ADDRESSBOOK_H
+#pragma once
 
 #include <string>
 #include <fstream>
@@ -40,5 +39,3 @@ public:
     //! Function for getting m_address_book vector
     vector< vector<string> > get_m_address_book() { return m_address_book; }
 };
-
-#endif
