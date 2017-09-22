@@ -8,6 +8,7 @@ include_directories(
     ${GTEST_INCLUDE_DIRS}
     ../
     ../libs/csvfile/
+    ../libs/csvfile/tests/
 )
 
 # Link runTests with what we want to test and the GTest and pthread library
@@ -15,7 +16,7 @@ add_executable(
     runTests
     main_test.cpp
     addressbook_test.cpp
-    csvfile_test.cpp
+    ../libs/csvfile/tests/csvfile_test.cpp
 )
 
 target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
