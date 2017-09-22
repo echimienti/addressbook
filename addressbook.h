@@ -13,8 +13,6 @@
 #include <vector>
 
 
-using namespace std;
-
 /*! Address Class: a class provides functionality to add an address and add that
  * to a 2 dimensional vector of vectors.
  * This class has a connection to CsvFile class to store to CSV file.
@@ -24,18 +22,18 @@ class Address {
 private:
     int m_row;
     int m_col;
-    vector<vector<string> > m_address_book;
+    std::vector<std::vector<std::string> > m_address_book;
 
 public:
     //! constructor
     Address(int, int);
 
     //! Function for adding an address to 2 dimensional vector
-    void add_address(vector<string> addressLine);
+    void add_address(std::vector<std::string> addressLine);
 
     //! Function for adding csv header, naming the csv fields
-    void add_header(vector<string> csvHeader);
+    void add_header(std::vector<std::string> csvHeader);
 
     //! Function for getting m_address_book vector
-    vector< vector<string> > get_m_address_book() { return m_address_book; }
+    std::vector< std::vector<std::string> > get_m_address_book() { return m_address_book; }
 };
