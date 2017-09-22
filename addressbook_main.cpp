@@ -1,14 +1,18 @@
 /*
  * main.cpp
+
  *
  *  Created on: May 5, 2017
  *
  *  @author E. Chimienti
  *  @version 0.1 05/05/17
  */
+#include <iostream>
+#include <sstream>
 #include "addressbook.h"
 #include "libs/csvfile/csvfile.h"
 
+using namespace std;
 
 vector<string> get_csv_header_line(string filename) {
     /* Reads in the first line from the csv file and pushes the elements to
