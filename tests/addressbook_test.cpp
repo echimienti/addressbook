@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 
+#include "CsvFileTest.h"
 #include "addressbook.cpp"
 
 using namespace std;
@@ -27,7 +28,7 @@ vector<string> an_address_entry {"Piet",
 
 vector< vector <string> > p_address { an_address_entry };
 
-TEST(add_addressStringTest, add_addressPos) {
+TEST_F(CsvFileTestBase, add_addressStringTes_pos) {
     Address a(1, 8);
     a.add_address(an_address_entry);
 
