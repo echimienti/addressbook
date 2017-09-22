@@ -150,6 +150,33 @@ addressbook_test.cpp.s:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.s
 .PHONY : addressbook_test.cpp.s
 
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
+
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o
+
+# target to build an object file
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
+
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
+
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i
+
+# target to preprocess a source file
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
+
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
+
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s
+
+# target to generate assembly for a file
+home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
+.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
+
 home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o: home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.o
 
 .PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o
@@ -216,6 +243,9 @@ help:
 	@echo "... addressbook_test.o"
 	@echo "... addressbook_test.i"
 	@echo "... addressbook_test.s"
+	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o"
+	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i"
+	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s"
 	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o"
 	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.i"
 	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.s"

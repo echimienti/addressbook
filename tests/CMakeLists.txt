@@ -16,6 +16,7 @@ add_executable(
     runTests
     main_test.cpp
     addressbook_test.cpp
+    ../libs/csvfile/tests/CsvFileTest.cpp
     ../libs/csvfile/tests/csvfile_test.cpp
 )
 
