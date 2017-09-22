@@ -48,5 +48,3 @@ addressbook_main: addressbook.o libs/csvfile/csvfile.o addressbook_main.o
 -include $(MAKEFILE_DEPEND)
 
 ## End of file 
-
-	
