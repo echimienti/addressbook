@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = .
+CMAKE_SOURCE_DIR = /home/echimienti/git/addressbook/tests
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = .
+CMAKE_BINARY_DIR = /home/echimienti/git/addressbook/tests
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start CMakeFiles CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echimienti/git/addressbook/tests/CMakeFiles /home/echimienti/git/addressbook/tests/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echimienti/git/addressbook/tests/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,60 @@ runTests/fast:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/build
 .PHONY : runTests/fast
 
+addressbook_test.o: addressbook_test.cpp.o
+
+.PHONY : addressbook_test.o
+
+# target to build an object file
+addressbook_test.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.o
+.PHONY : addressbook_test.cpp.o
+
+addressbook_test.i: addressbook_test.cpp.i
+
+.PHONY : addressbook_test.i
+
+# target to preprocess a source file
+addressbook_test.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.i
+.PHONY : addressbook_test.cpp.i
+
+addressbook_test.s: addressbook_test.cpp.s
+
+.PHONY : addressbook_test.s
+
+# target to generate assembly for a file
+addressbook_test.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.s
+.PHONY : addressbook_test.cpp.s
+
+csvfile_test.o: csvfile_test.cpp.o
+
+.PHONY : csvfile_test.o
+
+# target to build an object file
+csvfile_test.cpp.o:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/csvfile_test.cpp.o
+.PHONY : csvfile_test.cpp.o
+
+csvfile_test.i: csvfile_test.cpp.i
+
+.PHONY : csvfile_test.i
+
+# target to preprocess a source file
+csvfile_test.cpp.i:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/csvfile_test.cpp.i
+.PHONY : csvfile_test.cpp.i
+
+csvfile_test.s: csvfile_test.cpp.s
+
+.PHONY : csvfile_test.s
+
+# target to generate assembly for a file
+csvfile_test.cpp.s:
+	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/csvfile_test.cpp.s
+.PHONY : csvfile_test.cpp.s
+
 main_test.o: main_test.cpp.o
 
 .PHONY : main_test.o
@@ -159,6 +213,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... runTests"
+	@echo "... addressbook_test.o"
+	@echo "... addressbook_test.i"
+	@echo "... addressbook_test.s"
+	@echo "... csvfile_test.o"
+	@echo "... csvfile_test.i"
+	@echo "... csvfile_test.s"
 	@echo "... main_test.o"
 	@echo "... main_test.i"
 	@echo "... main_test.s"

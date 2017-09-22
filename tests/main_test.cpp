@@ -8,13 +8,6 @@
  */
 #include <gtest/gtest.h>
 
-#include "../addressbook.h"
-#include "../addressbook.cpp"
-#include "../libs/csvfile/csvfile.cpp"
-#include "../libs/csvfile/csvfile.h"
-#include "addressbook_test.h"
-#include "csvfile_test.h"
-
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
