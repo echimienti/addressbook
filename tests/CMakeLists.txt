@@ -6,7 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 find_package(GTest REQUIRED)
 include_directories(
     ${GTEST_INCLUDE_DIRS}
-    ../
+    ${CMAKE_CURRENT_SOURCE_DIR}/..
     ../libs/csvfile/
     ../libs/csvfile/tests/
 )
@@ -15,8 +15,12 @@ include_directories(
 add_executable(
     runTests
     main_test.cpp
-    addressbook_test.cpp
+    ../libs/csvfile/csvfile.cpp
+    ../libs/csvfile/common_utils.cpp
+    ../libs/csvfile/convert_utf16.cpp
     ../libs/csvfile/tests/CsvFileTest.cpp
+
+    addressbook_test.cpp
     ../libs/csvfile/tests/csvfile_test.cpp
 )
 
