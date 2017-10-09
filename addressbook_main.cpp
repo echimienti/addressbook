@@ -14,39 +14,6 @@
 
 using namespace std;
 
-vector<string> get_csv_header_line(string filename) {
-    /* Reads in the first line from the csv file and pushes the elements to
-     * a vector. The length of the vector will result in nr of columns
-     *
-     * @param: filename: filename of csv file
-     * @return: int: nr of columns
-     */
-    string csvLine;
-    ifstream inf(filename.c_str());
-    vector<string> csvHeaderLine;
-
-    // If we couldn't open the input file stream for reading
-    if (!inf) {
-        // Print an error and exit
-        cerr << filename << " is not present!" << endl;
-        return csvHeaderLine;
-    }
-
-    // While there's still stuff left to read
-    getline(inf, csvLine, '\n');
-    if (csvLine.size() != 0) {
-        string element;
-        stringstream csvLineStream(csvLine);
-
-        while(std::getline(csvLineStream,element,',')){
-            csvHeaderLine.push_back(element);
-        }
-    }
-
-    inf.close();
-
-    return csvHeaderLine;
-}
 
 /* Function that runs the main of the program that provides to enter
  * a choice of what you wants to do
@@ -57,7 +24,14 @@ int make_choice(char choice) {
      * @param: choice: enter a choice
      */
     string filename = "address.csv";
-    vector<string> csvHeader = get_csv_header_line(filename);
+
+    CsvFile<string> csv(filename);
+    string mode_a = "app";
+    string mode_in = "in";
+    vector<string> addressLine;
+
+    vector<string> csvHeader = csv.get_csv_header_line();
+    int col = csvHeader.size();
     int row = 1;
     bool no_csv_header = false;
 
@@ -73,12 +47,6 @@ int make_choice(char choice) {
 
         no_csv_header = true;
     }
-
-    int col = csvHeader.size();
-    CsvFile<string> csv("address.csv", col);
-    string mode_a = "app";
-    string mode_in = "in";
-    vector<string> addressLine;
 
     Address address(row, col);
 
