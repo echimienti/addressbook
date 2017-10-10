@@ -7,10 +7,7 @@
  *  @author E. Chimienti
  *  @version 0.1 05/05/17
  */
-#include <iostream>
-#include <sstream>
-#include "addressbook.h"
-#include "libs/csvfile/csvfile.h"
+#include "addressbook_main.h"
 
 using namespace std;
 
