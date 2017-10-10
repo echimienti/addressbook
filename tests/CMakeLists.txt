@@ -15,6 +15,7 @@ include_directories(
 add_executable(
     runTests
     main_test.cpp
+    ../addressbook.cpp
     ../libs/csvfile/csvfile.cpp
     ../libs/csvfile/common_utils.cpp
     ../libs/csvfile/convert_utf16.cpp
