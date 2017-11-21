@@ -7,6 +7,8 @@
  *  @author E. Chimienti
  *  @version 0.1 05/05/17
  */
+#include <ctime>
+#include <chrono>
 #include "addressbook_main.h"
 
 using namespace std;
@@ -122,10 +124,14 @@ int make_choice(char choice) {
 
 int main() {
     char choice;
+    time_t tt;
 
     do {
-        cout << endl << "Enter a to add and write an address to addressbook"
-                << endl;
+    	std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+    	tt = std::chrono::system_clock::to_time_t ( today );
+
+    	cout << "\n\tAddressbook " << ctime(&tt) << endl;
+        cout << endl << "Enter a to add and write an address to addressbook" << endl;
         cout << "Enter p to print all addresses from addressbook" << endl;
         cout << "Enter s to search from addressbook" << endl;
         cout << "Enter n for number of entries in addressbook" << endl;
