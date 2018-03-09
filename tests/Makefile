@@ -47,11 +47,13 @@ RM = /usr/bin/cmake -E remove -f
 # Escaping for special characters.
 EQUALS = =
 
+CURR_DIR := $(shell pwd)
+
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echimienti/git/addressbook/tests
+CMAKE_SOURCE_DIR = $(CURR_DIR)
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echimienti/git/addressbook/tests
+CMAKE_BINARY_DIR = $(CMAKE_SOURCE_DIR)
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +82,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echimienti/git/addressbook/tests/CMakeFiles /home/echimienti/git/addressbook/tests/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start $(CMAKE_SOURCE_DIR)/CMakeFiles $(CMAKE_SOURCE_DIR)/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echimienti/git/addressbook/tests/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start $(CMAKE_SOURCE_DIR)/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,141 +152,6 @@ addressbook_test.cpp.s:
 	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/addressbook_test.cpp.s
 .PHONY : addressbook_test.cpp.s
 
-home/echimienti/git/addressbook/libs/csvfile/common_utils.o: home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.o
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.o
-
-# target to build an object file
-home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.o
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.o
-
-home/echimienti/git/addressbook/libs/csvfile/common_utils.i: home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.i
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.i
-
-# target to preprocess a source file
-home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.i
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.i
-
-home/echimienti/git/addressbook/libs/csvfile/common_utils.s: home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.s
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.s
-
-# target to generate assembly for a file
-home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.s
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/common_utils.cpp.s
-
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.o: home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.o
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.o
-
-# target to build an object file
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.o
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.o
-
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.i: home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.i
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.i
-
-# target to preprocess a source file
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.i
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.i
-
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.s: home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.s
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.s
-
-# target to generate assembly for a file
-home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.s
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/convert_utf16.cpp.s
-
-home/echimienti/git/addressbook/libs/csvfile/csvfile.o: home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.o
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.o
-
-# target to build an object file
-home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.o
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.o
-
-home/echimienti/git/addressbook/libs/csvfile/csvfile.i: home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.i
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.i
-
-# target to preprocess a source file
-home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.i
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.i
-
-home/echimienti/git/addressbook/libs/csvfile/csvfile.s: home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.s
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.s
-
-# target to generate assembly for a file
-home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.s
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/csvfile.cpp.s
-
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o
-
-# target to build an object file
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.o
-
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i
-
-# target to preprocess a source file
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.i
-
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s: home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s
-
-# target to generate assembly for a file
-home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.cpp.s
-
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o: home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.o
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o
-
-# target to build an object file
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.o:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.o
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.o
-
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.i: home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.i
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.i
-
-# target to preprocess a source file
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.i:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.i
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.i
-
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.s: home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.s
-
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.s
-
-# target to generate assembly for a file
-home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.s:
-	$(MAKE) -f CMakeFiles/runTests.dir/build.make CMakeFiles/runTests.dir/home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.s
-.PHONY : home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.cpp.s
-
 main_test.o: main_test.cpp.o
 
 .PHONY : main_test.o
@@ -324,21 +191,6 @@ help:
 	@echo "... addressbook_test.o"
 	@echo "... addressbook_test.i"
 	@echo "... addressbook_test.s"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/common_utils.o"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/common_utils.i"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/common_utils.s"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/convert_utf16.o"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/convert_utf16.i"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/convert_utf16.s"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/csvfile.o"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/csvfile.i"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/csvfile.s"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.o"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.i"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/CsvFileTest.s"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.o"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.i"
-	@echo "... home/echimienti/git/addressbook/libs/csvfile/tests/csvfile_test.s"
 	@echo "... main_test.o"
 	@echo "... main_test.i"
 	@echo "... main_test.s"
