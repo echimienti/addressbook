@@ -26,14 +26,18 @@ make test <br />
 
 
 # Create documentation:
+For running make doc install: <br />
+sudo apt install doxygen <br />
+sudo apt install libkgraphviewer2 <br />
 make doc <br />
 
 
 # Get contacts from Google contacts:
 with your browse go to: https://contacts.google.com/?hl=en <br />
-On the left in the tree click on Export -> select either Export as Google CSV or Outlook CSV ( both are supported by the program ) <br />
+On the left in the tree click on Export -> select either Export as Google CSV or Outlook CSV (both are supported by the program) <br />
 In your Downloads folder you will have a file named contacts.csv <br />
 copy this file to in the addressbook folder and name it address.csv ad the program will work with csv file name address.csv <br />
+You can also start this program without these steps, a new empty adress.csv will be created <br />
 
 
 # Start addressbook program:
