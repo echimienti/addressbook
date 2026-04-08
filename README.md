@@ -20,7 +20,7 @@ sudo apt install cmake <br />
 cd /usr/src/gtest <br />
 sudo cmake CMakeLists.txt <br />
 sudo make <br />
-sudo cp *.a /usr/lib <br />
+sudo cp lib/*.a /usr/lib <br />
 <br />
 make test <br />
 
