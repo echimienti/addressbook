@@ -22,7 +22,7 @@ jobs:
         cd googletest
         mkdir build
         cd build
-        cmake -DCMAKE_CXX_STANDARD=17 ..
+        cmake -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON ..
         make
         sudo make install
         sudo ldconfig
@@ -36,10 +36,10 @@ jobs:
       run: git submodule update --init --recursive
     
     - name: Build project
-      run: make
+      run: CXXFLAGS="-std=c++17" make
     
     - name: Run tests
-      run: make test
+      run: CXXFLAGS="-std=c++17" make test
     
     - name: Generate code coverage
       run: |
