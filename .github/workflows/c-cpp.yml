@@ -8,16 +8,62 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake lcov doxygen git
+    
+    - name: Build and install gtest from source
+      run: |
+        cd /tmp
+        git clone https://github.com/google/googletest.git
+        cd googletest
+        mkdir build
+        cd build
+        cmake -DCMAKE_CXX_STANDARD=17 ..
+        make
+        sudo make install
+        sudo ldconfig
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        ref: master
+    
+    - name: Initialize submodules
+      run: git submodule update --init --recursive
+    
+    - name: Build project
       run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    
+    - name: Run tests
+      run: make test
+    
+    - name: Generate code coverage
+      run: |
+        cd tests/
+        gcov *.cpp || true
+        mkdir -p code_coverage
+        lcov --directory . --capture --output-file ./code_coverage/code_coverage.info -rc lcov_branch_coverage=1 || true
+        genhtml code_coverage/code_coverage.info --output-directory code_coverage || true
+    
+    - name: Build documentation
+      run: make doc || true
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: addressbook_main
+        path: ./addressbook_main
+        if-no-files-found: ignore
+    
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: code-coverage-report
+        path: ./tests/code_coverage
+        if-no-files-found: ignore
